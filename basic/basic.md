@@ -29,3 +29,34 @@ const f2 = f1();
 console.log(f2); // () => 1
 log(f2()); // 1
 ```
+
+## 고차함수
+
+- 함수를 인자로 받는 함수
+
+```javascript
+const apply1 = (f) => f(1);
+
+const add2 = (a) => a + 2;
+
+console.log(apply1(add2));
+// (a => a+2) => (a => a+2)(1)
+```
+
+```javascript
+const times = (fn, num) => {
+  let i = -1;
+  while (++i < n) f(i);
+};
+```
+
+- 리턴을 함수로 보내는 함수 (클로저를 만들어 리턴하는 함수)
+  - 클로저 : 계속 함수를 기억함
+
+```js
+const addMaker = (a) => (b) => a + b;
+const add10 = addMaker(10);
+
+log(add10);
+// b => a + b
+```
