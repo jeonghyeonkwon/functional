@@ -60,3 +60,4 @@ const add10 = addMaker(10);
 log(add10);
 // b => a + b
 ```
+
