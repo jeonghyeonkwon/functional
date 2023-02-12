@@ -77,3 +77,13 @@ for (const a of iterable) console.log(a);
 
 for (const a of iterator) console.log(a);
 ```
+
+## 전개 연산자
+
+```javascript
+console.clear();
+
+const a = [1, 2];
+
+log([...a, ...arr, ...set, ...map.values()]);
+```
