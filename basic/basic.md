@@ -12,7 +12,7 @@
 - 함수의 인자(파라미터)로 사용될 수 있다.
 - 함수의 결과(리턴)로 사용될 수 있다.
 
-# 일급 함수
+## 일급 함수
 
 - 함수를 값으로 다룰 수 있다
 - 조합성과 추상화의 도구
@@ -46,7 +46,7 @@ console.log(apply1(add2));
 ```javascript
 const times = (fn, num) => {
   let i = -1;
-  while (++i < n) f(i);
+  while (++i < num) f(i);
 };
 ```
 
@@ -60,4 +60,3 @@ const add10 = addMaker(10);
 log(add10);
 // b => a + b
 ```
-
