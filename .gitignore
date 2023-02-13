@@ -1,2 +1,4 @@
 .idea
-KotlinApp
+KotlinApp/.gradle
+KotlinApp/build
+KotlinApp/gradle

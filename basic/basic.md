@@ -46,7 +46,7 @@ console.log(apply1(add2));
 ```javascript
 const times = (fn, num) => {
   let i = -1;
-  while (++i < num) f(i);
+  while (++i < num) fn(i);
 };
 ```
 
