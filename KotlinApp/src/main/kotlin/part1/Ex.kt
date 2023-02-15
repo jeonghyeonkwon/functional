@@ -2,8 +2,9 @@
 
 fun main(){
 //    일급_함수()
-    고차_함수1()
-    고차_함수2()
+//    고차_함수1()
+//    고차_함수2()
+    클로저()
 }
 
 fun 일급_함수(){
@@ -32,4 +33,15 @@ fun 고차_함수2(){
 fun times(fn : (Int)->Int, num : Int){
     var i = -1;
     while (++i < num) println(fn(i));
+}
+
+
+fun 클로저(){
+    val add10 = addMaker(10);
+    println(add10(20));
+}
+fun addMaker(x:Int):(Int)-> Int{
+    return fun(y:Int) : Int{
+        return x+y;
+    }
 }
