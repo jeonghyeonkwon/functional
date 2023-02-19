@@ -19,4 +19,18 @@ const fMap = (fn, iter) => {
 
 console.log(fMap((p) => p.name, products));
 console.log(fMap((p) => p.price, products));
+
+//querySelectorAll에는 map 함수가 없음
+console.log(document.querySelectorAll("*").map((el) => el));
+
+// 만든 map으로 순회가능(document.querySelectorAll("*")에는 Symbol.iterator가 있기 따문에
+console.log(fMap((el) => el.nodeName, document.querySelectorAll("*")));
+
+//generator도 map 가능
+function* gen() {
+  yield 2;
+  yield 3;
+  yield 4;
+}
+console.log(fMap((a) => a * a, gen()));
 ```
