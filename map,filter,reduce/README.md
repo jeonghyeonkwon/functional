@@ -33,4 +33,11 @@ function* gen() {
   yield 4;
 }
 console.log(fMap((a) => a * a, gen()));
+
+// 자료구조 map도 가능
+let m = new Map();
+m.put("a", 10);
+m.put("b", 20);
+
+console.log(new Map(fMap(([key, value]) => [key, value * 2], m)));
 ```
