@@ -37,3 +37,25 @@ go(
   console.log()
 );
 ```
+
+## go로 읽기 좋은 코드 만들기
+
+```javascript
+console.log(
+  reduce(
+    add,
+    map(
+      (p) => p.price,
+      filter((p) => p.price < 20000, products)
+    )
+  )
+);
+// 이것을 go로 사용하면
+go(
+  products,
+  (products) => filter((p) => p.price < 20000, products),
+  (products) => map((p) => p.price, products),
+  (prices) => reduce(add, prices),
+  console.log
+);
+```
