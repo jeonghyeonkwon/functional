@@ -14,3 +14,26 @@ go(
   log
 );
 ```
+
+## pipe
+
+```javascript
+const pipe =
+  (f, ...fn) =>
+  (...as) =>
+    go(f(...as), ...fn);
+
+const pi = pipe(
+  (a, b) => a + b,
+  (a) => a + 10,
+  (a) => a + 100
+);
+console.log(f(0, 1));
+//밑에 것이랑 같음
+go(
+  add(0, 1),
+  (a) => a + 10,
+  (a) => a + 100,
+  console.log()
+);
+```
