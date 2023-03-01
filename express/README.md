@@ -59,3 +59,20 @@ go(
   console.log
 );
 ```
+
+## Curry
+
+```javascript
+const curry =
+  (f) =>
+  (a, ..._) =>
+    _.length ? f(a, ..._) : (..._) => f(a, ..._);
+
+const mult = curry((a, b) => a * b);
+console.log(mult(3)(2)); // 6
+
+const mult3 = mult(3);
+console.log(mult3(10)); // 30
+console.log(mult3(5)); // 15
+console.log(mult3(3)); // 9
+```
