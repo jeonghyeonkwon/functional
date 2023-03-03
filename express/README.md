@@ -76,3 +76,21 @@ console.log(mult3(10)); // 30
 console.log(mult3(5)); // 15
 console.log(mult3(3)); // 9
 ```
+
+## 함수 조합으로 함수 만들기
+
+```javascript
+const total_price = pipe(map((p) => p.price, reduce(add)));
+
+const base_total_price = (predi) => pipe(filter(predi), total_price);
+go(
+  products,
+  base_total_price((p) => p.price < 20000),
+  console.log
+);
+go(
+  products,
+  base_total_price((p) => p.price >= 20000),
+  console.log
+);
+```
