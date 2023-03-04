@@ -7,7 +7,24 @@ fun main(){
     products.add(Product("핸드폰 케이스",15000))
     products.add(Product("후드티",30000))
     products.add(Product("바지",25000))
-    커스텀_필터(products)
+
+    커스텀_맵(products)
+//    커스텀_필터(products)
+}
+
+fun 커스텀_맵(products: List<Product>){
+    val result = fMap({p->p.name},products);
+    result.forEach{s-> println(s)}
+
+    val result2 = fMap({p->p.price},products)
+    result2.forEach{i->println(i)}
+}
+fun <T, V>fMap(fn : (T) -> V, list:List<T>) : List<V>{
+    val res = mutableListOf<V>();
+    for(obj in list){
+        res.add(fn(obj))
+    }
+    return res;
 }
 
 fun 커스텀_필터(products: List<Product>){
