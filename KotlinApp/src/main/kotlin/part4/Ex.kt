@@ -8,8 +8,10 @@ fun main(){
     products.add(Product("후드티",30000))
     products.add(Product("바지",25000))
 
-    커스텀_맵(products)
+//    커스텀_맵(products)
 //    커스텀_필터(products)
+//    커스텀_리듀서(products)
+
 }
 
 fun 커스텀_맵(products: List<Product>){
@@ -18,6 +20,7 @@ fun 커스텀_맵(products: List<Product>){
 
     val result2 = fMap({p->p.price},products)
     result2.forEach{i->println(i)}
+
 }
 fun <T, V>fMap(fn : (T) -> V, list:List<T>) : List<V>{
     val res = mutableListOf<V>();
@@ -43,4 +46,13 @@ fun <T>fFilter(fn : (T) -> Boolean , list:List<T>):List<T>{
         if(fn(obj)) res.add(obj)
     }
     return res
+}
+
+fun 커스텀_리듀서(products:List<Product>){
+    val add = {a:Int,b:Int -> a+b}
+    val numList = mutableListOf(1,2,3,4,5)
+    fReducer(add,0, numList)
+}
+fun fReducer(fn:Any,acc:Any,iter:List<Int>){
+    
 }
