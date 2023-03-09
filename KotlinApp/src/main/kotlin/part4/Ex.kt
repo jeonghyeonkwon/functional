@@ -11,7 +11,7 @@ fun main(){
 //    커스텀_맵(products)
 //    커스텀_필터(products)
 //    커스텀_리듀서(products)
-
+    커스텀_리듀서(products)
 }
 
 fun 커스텀_맵(products: List<Product>){
@@ -51,8 +51,15 @@ fun <T>fFilter(fn : (T) -> Boolean , list:List<T>):List<T>{
 fun 커스텀_리듀서(products:List<Product>){
     val add = {a:Int,b:Int -> a+b}
     val numList = mutableListOf(1,2,3,4,5)
-    fReducer(add,0, numList)
+    val res = fReducer(add,0, numList)
+    print(res)
 }
-fun fReducer(fn:Any,acc:Any,iter:List<Int>){
-    
+fun fReducer(fn : (a:Int,b:Int) -> Int,
+             acc:Int,
+             iter:List<Int>):Int{
+    var sum = acc;
+    for(a in iter){
+        sum = fn(sum,a)
+    }
+    return sum
 }
