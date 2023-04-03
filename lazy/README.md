@@ -78,3 +78,17 @@ console.log(it.next());
 console.log(it.next());
 console.log(it.next());
 ```
+
+## 조합하여 queryStr만들기
+
+```javascript
+const queryStr = (obj) =>
+  go(
+    obj,
+    Object.entries,
+    map(([key, value]) => `${key}=${value}`),
+    reduce((a, b) => `${a}&${b}`)
+  );
+
+log(queryStr({ limit: 10, offset: 10, type: "notice" }));
+```
