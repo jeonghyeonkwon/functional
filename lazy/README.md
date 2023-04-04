@@ -91,4 +91,15 @@ const queryStr = (obj) =>
   );
 
 log(queryStr({ limit: 10, offset: 10, type: "notice" }));
+
+const join = curry((sep = ",", iter) =>
+  reduce((a, b) => `${a}${sep}${b}`, iter)
+);
+
+const queryStr = (obj) =>
+  pipe(
+    Object.entries,
+    map(([key, value]) => `${key}=${value}`),
+    join("&")
+  );
 ```
