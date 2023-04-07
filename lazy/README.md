@@ -103,3 +103,35 @@ const queryStr = (obj) =>
     join("&")
   );
 ```
+
+## Find
+
+```javascript
+
+const user = {
+
+  {age:32},
+  {age:31},
+  {age:29},
+  {age:35},
+  {age:34},
+  {age:38},
+  {age:30},
+
+};
+
+const find = curry((f,iter)=>
+  go(
+    iter,
+    L.filter(f),
+    take(1),
+    ([a])=>a
+  )
+);
+
+log(find(u=>u.age<30)(users))
+
+
+
+
+```
